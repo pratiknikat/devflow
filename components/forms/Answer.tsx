@@ -60,47 +60,11 @@ const Answer = ({ question, questionId, authorId }: Props) => {
       });
     } catch (error) {
       console.error(error);
-      //   toast({
-      //     title: "Failed to submit answer",
-      //     variant: "destructive",
-      //   });
+
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  //   const generateAIAnswer = async () => {
-  //     if (!authorId) return;
-  //     setSetIsSubmittingAI(true);
-  //     try {
-  //       const response = await fetch(
-  //         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/chatgpt`,
-  //         {
-  //           method: "POST",
-  //           body: JSON.stringify({ question }),
-  //         }
-  //       );
-  //       const aiAnswer = await response.json();
-  //       // Convert plain text to HTML format
-  //       const formattedAnswer = aiAnswer.reply.replace(/\n/g, "<br />");
-  //       if (editorRef.current) {
-  //         const editor = editorRef.current as any;
-  //         editor.setContent(formattedAnswer);
-  //       }
-  //       toast({
-  //         title: "Generated AI answer",
-  //         variant: "default",
-  //       });
-  //     } catch (error) {
-  //       console.error(error);
-  //       toast({
-  //         title: "Failed to generate AI answer",
-  //         variant: "destructive",
-  //       });
-  //     } finally {
-  //       setSetIsSubmittingAI(false);
-  //     }
-  //   };
 
   const isDarkMode = useMemo(() => mode === "dark", [mode]);
 
@@ -119,25 +83,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
           Write your answer here
         </h4>
 
-        <Button
-          className="btn light-border-2 gap-1.5 rounded-md px-4 py-2.5 text-primary-500 shadow-none dark:text-primary-500"
-          //   onClick={generateAIAnswer}
-        >
-          {isSubmittingAI ? (
-            <>Generating...</>
-          ) : (
-            <>
-              <Image
-                src="/assets/icons/stars.svg"
-                alt="star"
-                width={12}
-                height={12}
-                className="object-contain"
-              />
-              Generate AI Answer
-            </>
-          )}
-        </Button>
+       
       </div>
 
       <Form {...form}>

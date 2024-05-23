@@ -65,16 +65,6 @@ const AllAnswers = async ({
               </Link>
               <div className="flex justify-end">
                 Votes
-                {/* <Votes
-                  type="Answer"
-                  itemId={JSON.stringify(answer._id)}
-                  userId={JSON.stringify(userId)}
-                  disableVoting={answer.author.clerkId === clerkId}
-                  upvotes={answer.upvotes.length}
-                  hasAlreadyUpvoted={answer.upvotes.includes(userId)}
-                  downvotes={answer.downvotes.length}
-                  hasAlreadyDownvoted={answer.downvotes.includes(userId)}
-                /> */}
               </div>
             </div>
             <ParseHTML data={answer.content} />
@@ -83,10 +73,7 @@ const AllAnswers = async ({
       </div>
 
       <div className="mt-4 w-full">
-        {/* <Pagination
-          pageNumber={page ? +page : 1}
-          isNext={result.isNextAnswer}
-        /> */}
+       
       </div>
     </div>
   );
